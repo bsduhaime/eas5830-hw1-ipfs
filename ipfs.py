@@ -22,8 +22,8 @@ def pin_to_ipfs(data):
 
 def get_from_ipfs(cid,content_type="json"):
 	assert isinstance(cid,str), f"get_from_ipfs accepts a cid in the form of a string"
-	#response = requests.get(f"https://harlequin-quickest-rhinoceros-835.mypinata.cloud/ipfs/{cid}")
-	response = requests.get(f"https://ipfs.io/ipfs/{cid}")
+	response = requests.get(f"https://harlequin-quickest-rhinoceros-835.mypinata.cloud/ipfs/{cid}?pinataGatewayToken=1nTVJjGyxXd4YSteZqcPrAKpu1QcgC4uBMNORSRFY7lrsW_i7DxqWcsXOswCyLoA")
+	#response = requests.get(f"https://ipfs.io/ipfs/{cid}")
 	data = response.json()
 	assert isinstance(data,dict), f"get_from_ipfs should return a dict"
 	return data
